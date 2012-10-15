@@ -1,0 +1,14 @@
+Changes
+Chef.pm
+Chef.xs
+MANIFEST
+Makefile.PL
+cheflib/Makefile.PL
+cheflib/cheflib.c
+cheflib/cheflib.h
+cheflib/streamhack.c
+cheflib/streamhack.h
+cheflib/chef-hack.c
+cheflib/original/chef-grath.diff  
+cheflib/original/chef.c
+test.pl

@@ -1,0 +1,60 @@
+
+From gary@systemics.com Thu Apr  3 21:35:18 1997
+Date: Mon, 02 Dec 1996 15:08:46 +0100
+From: Gary Howland <gary@systemics.com>
+To: Jeremy Gilbert <grath@gryphon.ccs.brandeis.edu>
+Subject: Re: RFC: New Perl Module (Chef::)
+Newsgroups: comp.lang.perl.modules
+
+Jeremy A. Gilbert wrote:
+
+>         I basically am in the process of developing a new module and I
+> would like other Perl coder's opinions on my work before I try to post it
+> to CPAN. I have been reading this newsgroup for several weeks now, and it
+> seems to be the right place to do this (not to mention the recomendations
+> to this effect stated in the perlxstut manual page.) I am somewhat new to
+> this whole dynamically loaded module business, so please bear with me.
+> 
+>         I'm really interested:
+> 
+>                 1) What people think of this
+>                 2) If I should even bother uploading it to CPAN
+>                 3) If I have done the interface in the "right" way
+>                 4) If any of its design problems should be fixed
+>                         before releasing
+>                 5) Where to find out HOW to upload to CPAN. :)
+>
+>         Basically I have created a new module called "Chef". Chef embeds
+> the 'chef.c' program by John Hagerman which essentially converts a scalar
+> containg text (or whatever else) to something that the sweedish chef
+> on the Muppet Show[1] might say.
+
+
+I think Chef would be a bad choice of name, given that there are dozens
+of similar filters out there (Jive, Valley, Essex-Girl, ElmerFudd,
+etc.), and should really be kept in one place.  Text::Translators would
+be a better hierarchy, but then that sounds a little too 'serious'.
+
+Anyway, here's an Elmer Fudd for inspiration:
+
+	#!/usr/local/bin/perl -p
+
+	s/r/w/g;
+	s/l/w/g;
+	s/qu/qw/g;
+	s/th /f /g;
+	s/th/d/g;
+	s/n\./n\, uh-hah-hah-hah\. /g;
+	s/R/W/g;
+	s/L/W/g;
+	s/Qu/Qw/g;
+	s/QU/QW/g;
+	s/TH /F /g;
+	s/TH/D/g;
+	s/Th/D/g;
+	s/N\./N\, uh-hah-hah-hah\./g;
+
+Gary
+--
+pub  1024/C001D00D 1996/01/22  Gary Howland <gary@systemics.com>
+Key fingerprint =  0C FB 60 61 4D 3B 24 7D  1C 89 1D BE 1F EE 09 06

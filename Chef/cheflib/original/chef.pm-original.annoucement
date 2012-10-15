@@ -1,0 +1,101 @@
+
+From grath@gryphon.ccs.brandeis.edu Sun Dec  1 13:02:58 1996
+Date: Sun, 1 Dec 1996 05:07:26 -0500
+From: "Jeremy A. Gilbert" <grath@gryphon.ccs.brandeis.edu>
+Newsgroups: comp.lang.perl.modules
+Subject: RFC: New Perl Module (Chef::)
+
+Hey There:
+
+	I basically am in the process of developing a new module and I
+would like other Perl coder's opinions on my work before I try to post it
+to CPAN. I have been reading this newsgroup for several weeks now, and it
+seems to be the right place to do this (not to mention the recomendations
+to this effect stated in the perlxstut manual page.) I am somewhat new to
+this whole dynamically loaded module business, so please bear with me. 
+
+	I'm really interested:
+
+		1) What people think of this
+		2) If I should even bother uploading it to CPAN
+		3) If I have done the interface in the "right" way
+		4) If any of its design problems should be fixed
+			before releasing
+		5) Where to find out HOW to upload to CPAN. :)
+
+	Since my news server is really flaky[2], please please e-mail me
+any replies. I will summarize and repost to the group if you e-mail me
+privatly
+
+	Thanks! I'd also like to say that my general experience with the
+Perl community has been simply wonderful; you guys are a great bunch of
+people and I think its great the way Perl has brought together computer
+users from all sorts of walks of life. :)
+
+	Heregoes:
+
+=====================================================================
+
+INTRODUCTION:
+
+	Basically I have created a new module called "Chef". Chef embeds
+the 'chef.c' program by John Hagerman which essentially converts a scalar
+containg text (or whatever else) to something that the sweedish chef
+on the Muppet Show[1] might say.
+
+	Here is an example:
+
+----------------
+Beseecelly I hefe-a creeted a noo mudoole-a celled "Cheff". Cheff imbeds
+zee 'cheff.c' prugrem by Juhn Hegermun vheech issenteeelly cunferts a
+sceler cunteeeng text (oor vhetefer ilse-a) tu sumetheeng thet zee
+sveedeesh cheff un zee Mooppet Shoo[1] meeght sey.  Bork Bork Bork! 
+-------------------
+
+WHY?
+
+	Because I am working on a special web/media project that converts
+web pages to chef-speak. The fork/exec load from spawning the original
+chef executable got a little too much for my workstation on multiple
+pages, so I decided to make it a module instead of a seperate C program. 
+This may be of nominal interest to other people, so I figured I would
+release it to the net. 
+
+INTERFACE:
+	
+	Invocation is simple. The module defines a function called
+&Chef::process() that takes a single argument and returns a scalar value
+containing the new text. There is a hard-coded constant that does not
+allow the size of the buffer to exceed 65000 characters..
+
+	I have created a test suite, a manual page, and a (barely)
+commented source tree which seems to compile on LINUX and IRIX.
+
+EXAMPLE:
+
+#!/usr/bin/perl
+
+use lib './blib/arch';
+use Chef;
+
+undef $/;
+$stuff = <>;
+
+print &Chef::process($stuff) ."\n";
+
+==================================================================
+	
+-----------
+[1] #include <std-discalimer.h>
+[2] It may have gotten better, but I am still trying it
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-+
+ Jeremy Gilbert                           grath@gryphon.ccs.brandeis.edu + 
+ Webmaster & UNIX Systems Support             grath@mail.cs.brandeis.edu +
+ Department of Computer Science                                          +
+ Brandeis University              http://gryphon.ccs.brandeis.edu/~grath +
+ HOME: (617) 736-6910                             OFFICE: (617) 736-2740 +
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-+
+
+
+

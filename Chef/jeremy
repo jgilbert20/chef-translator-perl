@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+
+use lib './blib/arch';
+use lib './blib/lib';
+use Text::Chef chef;
+
+undef $/;
+$stuff = <>;
+
+print &Text::Chef::chef($stuff) ."\n";

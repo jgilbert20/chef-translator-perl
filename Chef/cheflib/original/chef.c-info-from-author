@@ -1,0 +1,30 @@
+
+From hagerman@chrysalis.com Mon Nov 11 11:35:54 1996
+Date: Mon, 11 Nov 1996 09:13:49 -0500
+From: John Hagerman <hagerman@chrysalis.com>
+Reply-To: hagerman@ece.cmu.edu
+To: Jeremy Gilbert <grath@gryphon.ccs.brandeis.edu>
+Subject: Re: chef.c 
+
+> 	I've had a copy of your swedish chef program lying around for
+> quite some time, and it recenly became beneficial to me to convert it into
+> a Perl module. I wanted to know if you had any licensing restrictions on
+> this code, or if it was in the public domain. I don't plan to charge
+> anything for it, but if I make a working module out of it, I will probably
+> upload it to CPAN for the benefit of others. If this is permisable, I will
+> give full credit to whoever is responsible for the original code.
+
+Jeremy ~
+
+I wrote the original 'chef' program, and placed no restrictions on it.
+Lots of legalese would be counter to the spirit of the whole project!
+I explained this when I originally posted it to the net, and suggested
+that new versions be distributed in the same spirit.  I do appreciate
+being acknowledged as the originator.  And I sincerely appreciate your
+effort to contact me about this!
+
+Let me know how things go.  Note that I have a new address:
+
+    hagerman@chrysalis.com
+
+Thanks ~ John

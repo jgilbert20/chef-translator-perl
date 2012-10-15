@@ -1,0 +1,51 @@
+
+From zenin@best.com Thu Apr  3 21:35:11 1997
+Date: Sun, 1 Dec 1996 07:31:02 -0800 (PST)
+From: Zenin <zenin@best.com>
+To: Jeremy Gilbert <grath@gryphon.ccs.brandeis.edu>
+Subject: Re: RFC: New Perl Module (Chef::)
+Newsgroups: comp.lang.perl.modules
+
+In article <Pine.LNX.3.95.961201023735.273A-100000@lynx.ccs.brandeis.edu> you wrote:
+: 	I'm really interested:
+: 		1) What people think of this
+	It's pretty darn neat. :)
+
+: 		2) If I should even bother uploading it to CPAN
+	Yes.
+
+: 		3) If I have done the interface in the "right" way
+	The user should not need to import the arch lib themself, the
+	module should do all of that stuff if it needs to. -But I don't
+	think an xs module needs to do this.  Not sure as I haven't touched
+	xs yet myself. :)
+
+	Also, I'd recommend exporting Chef::process() as simply chef();
+		use Exporter;
+		@EXPORT = qw(chef);
+
+	Making chef() default to $_ would be nice too using something like:
+		sub chef {
+			my $Text = shift || $_;
+			...
+		}
+
+	This would make things cleaner like:
+		use Chef;
+		while (<>) {
+			print chef;
+		}
+
+: 		4) If any of its design problems should be fixed
+: 			before releasing
+	It shouldn't be a base class.  I'd recommend making it
+	package Text::Chef since it does text processing of sorts.
+
+: 		5) Where to find out HOW to upload to CPAN. :)
+	I read that info on perl.com or in the FAQ some time ago, but
+	don't remember exactly were.  Sorry. :(
+
+Zenin                                                    Programing Consultant
+  Zenin@Best.com                        Perl, JavaScript, Web Graphic Design
+    http://www.best.com/~zenin/                   Just another Perl hacker
+     Spelling mistakes? Their couldn't be. -My modem is error correcting.
